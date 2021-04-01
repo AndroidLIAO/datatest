@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liaobinyu.datatest.mapper.analysis_result_beanMapper">
+  <resultMap id="BaseResultMap" type="com.liaobinyu.datatest.bean.analysis_result_bean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="url" jdbcType="VARCHAR" property="url" />
+    <result column="start_time" jdbcType="INTEGER" property="startTime" />
+    <result column="sucess_time" jdbcType="INTEGER" property="sucessTime" />
+    <result column="fail_time" jdbcType="INTEGER" property="failTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, url, start_time, sucess_time, fail_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.liaobinyu.datatest.bean.analysis_result_beanKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from analysis_result_table
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.liaobinyu.datatest.bean.analysis_result_beanKey">
+    delete from analysis_result_table
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    insert into analysis_result_table (id, url, start_time, 
+      sucess_time, fail_time)
+    values (#{id,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{startTime,jdbcType=INTEGER}, 
+      #{sucessTime,jdbcType=INTEGER}, #{failTime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    insert into analysis_result_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="sucessTime != null">
+        sucess_time,
+      </if>
+      <if test="failTime != null">
+        fail_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="sucessTime != null">
+        #{sucessTime,jdbcType=INTEGER},
+      </if>
+      <if test="failTime != null">
+        #{failTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    update analysis_result_table
+    <set>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="sucessTime != null">
+        sucess_time = #{sucessTime,jdbcType=INTEGER},
+      </if>
+      <if test="failTime != null">
+        fail_time = #{failTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    update analysis_result_table
+    set start_time = #{startTime,jdbcType=INTEGER},
+      sucess_time = #{sucessTime,jdbcType=INTEGER},
+      fail_time = #{failTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.liaobinyu.datatest.bean.analysis_result_bean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="url" jdbcType="VARCHAR" property="url" />
+    <result column="start_time" jdbcType="INTEGER" property="startTime" />
+    <result column="sucess_time" jdbcType="INTEGER" property="sucessTime" />
+    <result column="fail_time" jdbcType="INTEGER" property="failTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, url, start_time, sucess_time, fail_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.liaobinyu.datatest.bean.analysis_result_beanKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from analysis_result_table
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.liaobinyu.datatest.bean.analysis_result_beanKey">
+    delete from analysis_result_table
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    insert into analysis_result_table (id, url, start_time, 
+      sucess_time, fail_time)
+    values (#{id,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{startTime,jdbcType=INTEGER}, 
+      #{sucessTime,jdbcType=INTEGER}, #{failTime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    insert into analysis_result_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="sucessTime != null">
+        sucess_time,
+      </if>
+      <if test="failTime != null">
+        fail_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="sucessTime != null">
+        #{sucessTime,jdbcType=INTEGER},
+      </if>
+      <if test="failTime != null">
+        #{failTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    update analysis_result_table
+    <set>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="sucessTime != null">
+        sucess_time = #{sucessTime,jdbcType=INTEGER},
+      </if>
+      <if test="failTime != null">
+        fail_time = #{failTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liaobinyu.datatest.bean.analysis_result_bean">
+    update analysis_result_table
+    set start_time = #{startTime,jdbcType=INTEGER},
+      sucess_time = #{sucessTime,jdbcType=INTEGER},
+      fail_time = #{failTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+      and url = #{url,jdbcType=VARCHAR}
+  </update>
+</mapper>
